@@ -85,10 +85,9 @@ class StackDivider
         evenstack = new stack(evenCount);
         oddstack = new stack(oddCount);
 
-        // يجب استخدام pop لأخذ العنصر من الستاك الأصلي وليس peek
         while (!originalStack.isempty())
         {
-            int item = originalStack.pop(); // نحذف العنصر من الستاك
+            int item = originalStack.pop(); 
             if (item % 2 == 0)
             {
                 evenstack.push(item);
