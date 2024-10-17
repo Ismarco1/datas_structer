@@ -1,4 +1,4 @@
-﻿// muqtadamohammed hadi
+﻿// muqtada mohammed hadi
 class stack
 {
     private int[] elements;
@@ -55,8 +55,8 @@ class stack
     {
         return elements[top];
     }
-    // اضافة لمعرفة عدد العناصر الزوجية و الفردية
 
+    // اضافة لمعرفة عدد العناصر الزوجية و الفردية
     public void count_even_odd(out int evenCount, out int oddCount)
     {
         evenCount = 0;
@@ -85,9 +85,10 @@ class StackDivider
         evenstack = new stack(evenCount);
         oddstack = new stack(oddCount);
 
-        for (int i = 0; i < originalStack.size(); i++)
+        // يجب استخدام pop لأخذ العنصر من الستاك الأصلي وليس peek
+        while (!originalStack.isempty())
         {
-            int item = originalStack.peek(); 
+            int item = originalStack.pop(); // نحذف العنصر من الستاك
             if (item % 2 == 0)
             {
                 evenstack.push(item);
@@ -96,10 +97,10 @@ class StackDivider
             {
                 oddstack.push(item);
             }
-            originalStack.pop(); 
         }
     }
 }
+
 class program
 {
     static void Main()
